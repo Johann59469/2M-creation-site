@@ -73,28 +73,59 @@
 /* Animation halo blanc autour du logo */
 .animate-glow {
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
-                0 0 60px rgba(255, 255, 255, 0.4),
-                0 0 100px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(246, 89, 18, 0.7),
+                0 0 60px rgba(246, 89, 18, 0.4),
+                0 0 100px rgba(246, 89, 18, 0.2);
     animation: glowPulse 3s infinite ease-in-out;
     z-index: 1;
 }
 
 @keyframes glowPulse {
     0% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
-                    0 0 30px rgba(255, 255, 255, 0.2),
-                    0 0 50px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(246, 89, 18, 0.4),
+                    0 0 30px rgba(246, 89, 18, 0.2),
+                    0 0 50px rgba(246, 89, 18, 0.1);
     }
     50% {
-        box-shadow: 0 0 35px rgba(255, 255, 255, 0.8),
-                    0 0 80px rgba(255, 255, 255, 0.5),
-                    0 0 120px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 35px rgba(246, 89, 18, 0.8),
+                    0 0 80px rgba(246, 89, 18, 0.5),
+                    0 0 120px rgba(246, 89, 18, 0.3);
     }
     100% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
-                    0 0 30px rgba(255, 255, 255, 0.2),
-                    0 0 50px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(246, 89, 18, 0.4),
+                    0 0 30px rgba(246, 89, 18, 0.2),
+                    0 0 50px rgba(246, 89, 18, 0.1);
+    }
+}
+.shiny-text {
+    position: relative;
+    display: inline-block;
+    color: #FFA500; /* Couleur orange */
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.shiny-text::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,165,0,0.5), transparent);
+    transform: rotate(25deg);
+    animation: shine 15s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-150%) rotate(25deg);
+    }
+    20% {
+        transform: translateX(150%) rotate(25deg);
+    }
+    100% {
+        transform: translateX(150%) rotate(25deg);
     }
 }
 
@@ -171,7 +202,7 @@
     <!-- À propos -->
     <section id="about" class="py-16 px-4 bg-gray-100">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">À propos</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">À propos de moi</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
                     <h3 class="text-2xl font-bold mb-4">Je suis Mickaël Moretti<br>Artisan du métal, sculpteur d'intentions</h3>
@@ -195,7 +226,7 @@
                             <span>Une écluse miniature fonctionnelle, pensée pour s'intégrer dans un bassin paysager.</span>
                         </li>
                     </ul>
-                    <p class="text-gray-700 italic">"Le métal, sous mes doigts, devient matière vivante."</p>
+                    <p class="text-gray-600 italic shiny-text">"Le métal, sous mes doigts, devient matière vivante."</p>
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="bg-gray-300 h-96 w-full rounded-lg overflow-hidden shadow-lg">
@@ -209,16 +240,16 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-4">Services</h2>
             <p class="text-xl text-center text-gray-600 mb-12">Du sur-mesure, du solide, du beau</p>
-            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">Toutes mes créations sont conçues et fabriquées à la main, dans une démarche artisanale respectueuse des savoir-faire traditionnels, tout en s’inscrivant dans une esthétique moderne et épurée.</p>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Toutes mes créations sont conçues et fabriquées à la main, dans une démarche artisanale respectueuse des savoir-faire traditionnels, tout en s’inscrivant dans une esthétique moderne et épurée.</p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
                 <div class="service-card bg-gray-50 p-6 rounded-lg transition duration-300">
                     <div class="text-orange-500 text-4xl mb-4">
-                        <i class="fas fa-gate"></i>
+                        <i class="fas fa-archway"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Portails & Portillons</h3>
-                    <p class="text-gray-700">Des entrées personnalisées, robustes et élégantes, pensées pour durer et valoriser votre propriété.</p>
+                    <p class="text-gray-600">Des entrées personnalisées, robustes et élégantes, pensées pour durer et valoriser votre propriété.</p>
                 </div>
                 
                 <!-- Service 2 -->
@@ -227,7 +258,7 @@
                         <i class="fas fa-stairs"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Escaliers & Rampes</h3>
-                    <p class="text-gray-700">Sublimez vos intérieurs ou extérieurs avec des structures alliant sécurité, finesse et caractère.</p>
+                    <p class="text-gray-600">Sublimez vos intérieurs ou extérieurs avec des structures alliant sécurité, finesse et caractère.</p>
                 </div>
                 
                 <!-- Service 3 -->
@@ -236,7 +267,7 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Garde-corps</h3>
-                    <p class="text-gray-700">Travail précis des lignes pour protéger sans alourdir l'espace. Sécurité, confort visuel et harmonie des volumes.</p>
+                    <p class="text-gray-600">Travail précis des lignes pour protéger sans alourdir l'espace. Sécurité, confort visuel et harmonie des volumes.</p>
                 </div>
                 
                 <!-- Service 4 -->
@@ -245,7 +276,7 @@
                         <i class="fas fa-border-style"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Grilles de fenêtres</h3>
-                    <p class="text-gray-700">Protection discrète ou élément décoratif affirmé, chaque pièce s'adapte à l'architecture et à l'usage.</p>
+                    <p class="text-gray-600">Protection discrète ou élément décoratif affirmé, chaque pièce s'adapte à l'architecture et à l'usage.</p>
                 </div>
                 
                 <!-- Service 5 -->
@@ -254,7 +285,7 @@
                         <i class="fas fa-leaf"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Objets déco & Sculptures</h3>
-                    <p class="text-gray-700">Des créations artistiques en métal pour embellir vos espaces : jeux de formes, de pleins et de vides.</p>
+                    <p class="text-gray-600">Des créations artistiques en métal pour embellir vos espaces : jeux de formes, de pleins et de vides.</p>
                 </div>
                 
                 <!-- Service 6 -->
@@ -263,7 +294,7 @@
                         <i class="fas fa-chair"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Mobilier en métal</h3>
-                    <p class="text-gray-700">Tables, sellettes, consoles… Alliez fonctionnalité et design avec des pièces uniques et durables.</p>
+                    <p class="text-gray-600">Tables, sellettes, consoles… Alliez fonctionnalité et design avec des pièces uniques et durables.</p>
                 </div>
             </div>
             
@@ -286,7 +317,7 @@
                 <img src="images2M/portail1.jpg" alt="Portail forgé" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Portail élégant</h3>
-                        <p class="text-gray-700">Lignes soignées</p>
+                        <p class="text-gray-600">Lignes soignées</p>
                     </div>
                 </div>
                 
@@ -295,7 +326,7 @@
                 <img src="images2M/profilmairie.jpg" alt="Profil mairie" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Marquise</h3>
-                        <p class="text-gray-700">Pour habiller votre entrée</p>
+                        <p class="text-gray-600">Pour habiller votre entrée</p>
                     </div>
                 </div>
                 
@@ -304,7 +335,7 @@
                 <img src="images2M/croix1.jpg" alt="Croix décorative" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Clé de tirant</h3>
-                        <p class="text-gray-700">Protection avec style</p>
+                        <p class="text-gray-600">Protection avec style</p>
                     </div>
                 </div>
                 
@@ -313,7 +344,7 @@
                 <img src="images2M/taureau.jpg" alt="Garde-corps 1" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Sculptures métalliques</h3>
-                        <p class="text-gray-700">Œuvres d'art pour vos espaces</p>
+                        <p class="text-gray-600">Œuvres d'art pour vos espaces</p>
                     </div>
                 </div>
                 
@@ -322,7 +353,7 @@
                 <img src="images2M/escalier.jpg" alt="Garde-corps 2" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Rampe d'escalier</h3>
-                        <p class="text-gray-700">Sécurité et élégance pour vos escaliers</p>
+                        <p class="text-gray-600">Sécurité et élégance pour vos escaliers</p>
                     </div>
                 </div>
                 
@@ -331,7 +362,7 @@
                 <img src="images2M/gc3.jpg" alt="Garde-corps 3" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     <div class="p-4 bg-white">
                         <h3 class="font-bold text-lg mb-2">Garde corps</h3>
-                        <p class="text-gray-700">Réalisations uniques</p>
+                        <p class="text-gray-600">Réalisations uniques</p>
                     </div>
                 </div>
             </div>
@@ -444,7 +475,7 @@
     <section id="contact" class="py-16 px-4 bg-gray-100">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-4">Formulaire de contact</h2>
-            <p class="text-xl text-center text-gray-600 mb-12">Un projet ? Une question ? Un rêve en métal à concrétiser ?</p>
+            <p class="text-xl text-center text-gray-500 mb-12">Un projet ? Une question ? Un rêve en métal à concrétiser ?</p>
             
             <div class="bg-white p-8 rounded-lg shadow-lg">
                 <p class="text-gray-500 mb-8">Chaque réalisation commence par une idée, un besoin, une envie. Qu'il s'agisse d'un portail, d'un mobilier unique ou d'un projet atypique, je vous accompagne de la conception à la pose.</p>
@@ -453,22 +484,21 @@
  	   <div class="grid md:grid-cols-2 gap-6">
   	      <div>
             	<label for="name" class="block text-gray-500 font-medium mb-2">Nom complet</label>
-          	  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+          	  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800">
        	 </div>
        	 <div>
          	   <label for="email" class="block text-gray-500 font-medium mb-2">Email</label>
-          	  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+          	  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800">
       	  </div>
    	 </div>
 
     	<div>
         	<label for="phone" class="block text-gray-500 font-medium mb-2">Téléphone</label>
-       	 <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+       	 <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800">
    	 </div>
-
     	<div>
         <label for="project" class="block text-gray-500 font-medium mb-2">Parlez-moi de votre projet</label>
-        <textarea id="project" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+        <textarea id="project" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800"></textarea>
     </div>
 <input type="text" name="_gotcha" style="display:none">
 
