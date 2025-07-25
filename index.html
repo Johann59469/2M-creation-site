@@ -130,6 +130,40 @@
                      0 0 60px rgba(246, 89, 18,0.3);
     }
 }
+  /* --- Parallax Galerie --- */
+  .parallax-container {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 12px;
+  }
+
+  .parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease-out;
+  }
+
+  .parallax-container:hover .parallax {
+      transform: translateY(-20px); /* Effet dynamique au survol */
+  }
+/* Animation fade-in au scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -232,7 +266,7 @@
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="bg-gray-300 h-96 w-full rounded-lg overflow-hidden shadow-lg">
-                <img src="images2M/FACE1_n.jpg" alt="Artisan au travail" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                <img src="images2M/FACE1_n.jpg" alt="Artisan au travail" class="w-full h-96 object-cover rounded-lg shadow-lg fade-in">
             </div>
         </div>
     </section>
@@ -307,79 +341,80 @@
         </div>
     </section>
 
-    <!-- Galerie -->
-    <section id="gallery" class="py-16 px-4 bg-gray-100">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">Galerie de mes réalisations</h2>
-            <p class="text-xl text-center text-gray-600 mb-12">Inspiration & savoir-faire en images</p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/portail1.jpg" alt="Portail forgé" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Portail élégant</h3>
-                        <p class="text-gray-600">Lignes soignées</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/profilmairie.jpg" alt="Profil mairie" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Marquise</h3>
-                        <p class="text-gray-600">Pour habiller votre entrée</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/croix1.jpg" alt="Croix décorative" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Clé de tirant</h3>
-                        <p class="text-gray-600">Protection avec style</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/taureau.jpg" alt="Garde-corps 1" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Sculptures métalliques</h3>
-                        <p class="text-gray-600">Œuvres d'art pour vos espaces</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/escalier.jpg" alt="Garde-corps 2" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Rampe d'escalier</h3>
-                        <p class="text-gray-600">Sécurité et élégance pour vos escaliers</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="images2M/gc3.jpg" alt="Garde-corps 3" class="w-full h-64 object-cover rounded-lg shadow-lg">
-                    <div class="p-4 bg-white">
-                        <h3 class="font-bold text-lg mb-2">Garde corps</h3>
-                        <p class="text-gray-600">Réalisations uniques</p>
-                    </div>
+<!-- Galerie -->
+<section id="gallery" class="py-16 px-4 bg-gray-100">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">Galerie de mes réalisations</h2>
+        <p class="text-xl text-center text-gray-600 mb-12">Inspiration & savoir-faire en images</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery Item 1 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/portail1.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Portail élégant</h3>
+                    <p class="text-gray-600">Lignes soignées</p>
                 </div>
             </div>
-            
-            <div class="mt-12 text-center">
-                <p class="text-lg mb-6">Du portail forgé aux lignes contemporaines, à la rampe d'escalier ajourée d'inspiration végétale, chaque réalisation est une pièce unique.</p>
-                <a href="#contact" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Envie d'un projet similaire ?</a>
+
+            <!-- Gallery Item 2 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/profilmairie.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Marquise</h3>
+                    <p class="text-gray-600">Pour habiller votre entrée</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/croix1.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Clé de tirant</h3>
+                    <p class="text-gray-600">Protection avec style</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/taureau.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Sculptures métalliques</h3>
+                    <p class="text-gray-600">Œuvres d'art pour vos espaces</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/escalier.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Rampe d'escalier</h3>
+                    <p class="text-gray-600">Sécurité et élégance pour vos escaliers</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 parallax-container">
+                <div class="parallax" style="background-image: url('images2M/gc3.jpg');"></div>
+                <div class="p-4 bg-white">
+                    <h3 class="font-bold text-lg mb-2">Garde corps</h3>
+                    <p class="text-gray-600">Réalisations uniques</p>
+                </div>
             </div>
         </div>
-    </section>
+
+        <div class="mt-12 text-center">
+            <p class="text-lg mb-6">Du portail forgé aux lignes contemporaines, à la rampe d'escalier ajourée d'inspiration végétale, chaque réalisation est une pièce unique.</p>
+            <a href="#contact" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Envie d'un projet similaire ?</a>
+        </div>
+    </div>
+</section>
+
 <!-- Testimonials Section -->
 <section id="testimonials" class="relative py-16 px-4">
     <!-- Image de fond -->
     <div class="absolute inset-0">
-        <img src="images2M/pic1.png" alt="Fond décoratif" class="w-full h-full object-cover opacity-20">
+        <img src="images2M/pic1.png" alt="Fond décoratif" class="w-full h-full object-cover opacity-40">
     </div>
 
     <!-- Overlay sombre -->
@@ -560,7 +595,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-
                 <p class="mt-8 text-center text-gray-600 italic">Le sur-mesure, c'est la règle. Pas de formulaire impersonnel, ici c'est un artisan qui vous répond.</p>
             </div>
             
@@ -627,4 +661,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     </script>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.fade-in');
+
+    function handleScroll() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Vérifie au chargement
+});
+</script>
 </html>
