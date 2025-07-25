@@ -105,30 +105,31 @@
     overflow: hidden;
 }
 
-.shiny-text::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(120deg, transparent, rgba(255,165,0,0.5), transparent);
-    transform: rotate(25deg);
-    animation: shine 15s infinite;
+
+/* Texte animé avec halo pulsant */
+.animated-text {
+    display: inline-block;
+    font-weight: bold;
+    color: #a0a0a0; /* Gris de base */
+    position: relative;
+    text-shadow: 0 0 10px rgba(246, 89, 18,0.4);
+    animation: textPulse 3s infinite ease-in-out;
 }
 
-@keyframes shine {
-    0% {
-        transform: translateX(-150%) rotate(25deg);
+/* Animation couleur + halo */
+@keyframes textPulse {
+    0%, 100% {
+        color: #a0a0a0; /* Gris */
+        text-shadow: 0 0 10px rgba(246, 89, 18,0.4),
+                     0 0 20px rgba(246, 89, 18,0.2);
     }
-    20% {
-        transform: translateX(150%) rotate(25deg);
-    }
-    100% {
-        transform: translateX(150%) rotate(25deg);
+    50% {
+        color: #FFA500; /* Orange vif */
+        text-shadow: 0 0 20px rgba(246, 89, 18,0.8),
+                     0 0 40px rgba(246, 89, 18,0.6),
+                     0 0 60px rgba(246, 89, 18,0.3);
     }
 }
-
     </style>
 </head>
 <body class="bg-gray-50">
@@ -226,7 +227,8 @@
                             <span>Une écluse miniature fonctionnelle, pensée pour s'intégrer dans un bassin paysager.</span>
                         </li>
                     </ul>
-                    <p class="text-gray-600 italic shiny-text">"Le métal, sous mes doigts, devient matière vivante."</p>
+                    <p class="italic animated-text">"Le métal, sous mes doigts, devient matière vivante."</p>
+
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="bg-gray-300 h-96 w-full rounded-lg overflow-hidden shadow-lg">
@@ -238,7 +240,7 @@
     <!-- Services -->
     <section id="Mes services" class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">Services</h2>
+            <h2 class="text-3xl font-bold text-center mb-4">Mes services</h2>
             <p class="text-xl text-center text-gray-600 mb-12">Du sur-mesure, du solide, du beau</p>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Toutes mes créations sont conçues et fabriquées à la main, dans une démarche artisanale respectueuse des savoir-faire traditionnels, tout en s’inscrivant dans une esthétique moderne et épurée.</p>
             
